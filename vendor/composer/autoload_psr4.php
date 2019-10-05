@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Contracts\\Service\\' => array($vendorDir . '/symfony/service-contracts'),
+    'Symfony\\Component\\Stopwatch\\' => array($vendorDir . '/symfony/stopwatch'),
+    'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Kirby\\' => array($vendorDir . '/getkirby/composer-installer/src'),
     'Bnomei\\' => array($baseDir . '/classes'),
 );

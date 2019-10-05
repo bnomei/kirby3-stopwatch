@@ -4,5 +4,11 @@
 
 Kirby::plugin('bnomei/stopwatch', [
     'options' => [
+        'precision' => true,
     ],
-  ]);
+    'siteMethods' => [
+        'stopwatch' => function () {
+            return \Bnomei\Stopwatch::singleton();
+        },
+    ],
+]);

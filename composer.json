@@ -1,6 +1,6 @@
 {
   "name": "bnomei/kirby3-stopwatch",
-  "description": "Profile your Kirby 3 CMS code",
+  "description": "Profile your Kirby 3 CMS code with precision in milliseconds (or seconds).",
   "type": "kirby-plugin",
   "version": "1.0.0",
   "license": "MIT",
@@ -28,7 +28,8 @@
   },
   "require": {
     "php": ">=7.2.0",
-    "getkirby/composer-installer": "^1.1"
+    "getkirby/composer-installer": "^1.1",
+    "symfony/stopwatch": "^4.3"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.3",
@@ -47,12 +48,19 @@
     "dist": [
       "composer install --no-dev --optimize-autoloader",
       "git rm -rf --cached .; git add .;"
+    ],
+    "kirby": [
+      "composer install",
+      "composer update",
+      "composer install --working-dir=tests/kirby --no-dev --optimize-autoloader",
+      "composer update --working-dir=tests/kirby"
     ]
   },
   "extra": {
     "kirby-cms-path": "tests/kirby"
   },
   "suggest": {
+    "bnomei/kirby3-janitor": "Profile time spend in jobs",
     "bnomei/kirby3-monolog": "Log profiling results to files/databases/notifications/..."
   }
 }
