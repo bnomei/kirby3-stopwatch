@@ -22,7 +22,7 @@ final class Stopwatch extends SymStopwatch
     public function __construct(array $options = [])
     {
         $defaults = [
-            'precision' => option('bnomei.stopwatch.precision', false),
+            'precision' => option('bnomei.stopwatch.precision', true),
         ];
         $this->options = array_merge($defaults, $options);
 

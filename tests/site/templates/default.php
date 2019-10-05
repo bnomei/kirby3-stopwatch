@@ -2,7 +2,7 @@
 
 echo 'EVENT DURATION' . PHP_EOL;
 site()->stopwatch()->start('myevent');
-sleep(1);
+usleep(500);
 site()->stopwatch()->stop('myevent');
 echo site()->stopwatch()->duration('myevent') . PHP_EOL;  // float | int
 

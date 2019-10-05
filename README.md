@@ -54,10 +54,10 @@ foreach ([random_int(100,500),random_int(100,500),random_int(100,500)] as $time)
 }
 usleep(100);
 $stopwatch->stop($eventName);
-$totalDuration = $stopwatch->duration($eventName); // int | float
+$totalDuration = $stopwatch->duration($eventName); // float | int
 echo $totalDuration . PHP_EOL;
 foreach ($stopwatch->getEvent($eventName)->getPeriods() as $period) {
-    echo $period->getDuration() . PHP_EOL;  // int | float
+    echo $period->getDuration() . PHP_EOL;  // float | int
 }
 ```
 
@@ -77,7 +77,7 @@ $duration = $stopwatch->duration('my event with laps'); // float | int
 
 | bnomei.stopwatch.           | Default        | Description               |            
 |---------------------------|----------------|---------------------------| 
-| precision | `true` | measure microseconds as float or int seconds. Example: `1000.0` ms or `1` sec. |
+| precision | `true` | measure microseconds as float or int seconds. |
 
 > NOTE: This plugin defaults to measuring in milliseconds but the symfony component does not.
 

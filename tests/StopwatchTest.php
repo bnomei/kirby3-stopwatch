@@ -14,16 +14,6 @@ final class StopwatchTest extends TestCase
         $this->assertInstanceOf(Stopwatch::class, $stopwatch);
     }
 
-    public function testSingleton()
-    {
-        // create
-        $stopwatch = Stopwatch::singleton();
-        $this->assertInstanceOf(Stopwatch::class, $stopwatch);
-        // from static cached
-        $stopwatch = Stopwatch::singleton();
-        $this->assertInstanceOf(Stopwatch::class, $stopwatch);
-    }
-
     public function testEvent()
     {
         $eventName = 'onesecond';
@@ -33,11 +23,11 @@ final class StopwatchTest extends TestCase
         ]);
 
         $stopwatch->start($eventName);
-        sleep(1);
+        usleep(500);
         $stopwatch->stop($eventName);
 
         $duration = $stopwatch->duration($eventName);
-        $this->assertTrue($duration == 1);
+        $this->assertTrue($duration == 0);
     }
 
     public function testLaps()
@@ -57,9 +47,9 @@ final class StopwatchTest extends TestCase
         $stopwatch->stop($eventName);
 
         $duration = $stopwatch->duration($eventName);
-        $this->assertTrue($duration >= 1000.0 && $duration <= 1100.0);
+        $this->assertTrue($duration >= 1.0 && $duration <= 2.0);
 
-        $periods = $stopwatch->duration($eventName);
+        $periods = $stopwatch->getEvent($eventName)->getPeriods();
         $this->assertCount(3, $periods);
         $this->assertInstanceOf(StopwatchPeriod::class, $periods[0]);
     }
@@ -72,5 +62,21 @@ final class StopwatchTest extends TestCase
 
         $this->assertIsArray($stopwatch->option());
         $this->assertTrue($stopwatch->option('precision'));
+
+        $stopwatch = new Stopwatch([
+            'precision' => false,
+        ]);
+
+        $this->assertFalse($stopwatch->option('precision'));
+    }
+
+    public function testSingleton()
+    {
+        // create
+        $stopwatch = Stopwatch::singleton();
+        $this->assertInstanceOf(Stopwatch::class, $stopwatch);
+        // from static cached
+        $stopwatch = Stopwatch::singleton();
+        $this->assertInstanceOf(Stopwatch::class, $stopwatch);
     }
 }
