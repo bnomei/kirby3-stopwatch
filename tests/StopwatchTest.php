@@ -28,14 +28,16 @@ final class StopwatchTest extends TestCase
     {
         $eventName = 'onesecond';
 
-        $stopwatch = new Stopwatch();
+        $stopwatch = new Stopwatch([
+            'precision' => false
+        ]);
 
         $stopwatch->start($eventName);
         sleep(1);
         $stopwatch->stop($eventName);
 
         $duration = $stopwatch->duration($eventName);
-        $this->assertTrue($duration >= 1.0 && $duration <= 1.1);
+        $this->assertTrue($duration == 1);
     }
 
     public function testLaps()
@@ -47,15 +49,15 @@ final class StopwatchTest extends TestCase
         ]);
 
         $stopwatch->start($eventName);
-        sleep(1);
+        usleep(500);
         $stopwatch->lap($eventName);
-        sleep(1);
+        usleep(300);
         $stopwatch->lap($eventName);
-        sleep(1);
+        usleep(200);
         $stopwatch->stop($eventName);
 
         $duration = $stopwatch->duration($eventName);
-        $this->assertTrue($duration >= 3.0 && $duration <= 3.1);
+        $this->assertTrue($duration >= 1000.0 && $duration <= 1100.0);
 
         $periods = $stopwatch->duration($eventName);
         $this->assertCount(3, $periods);

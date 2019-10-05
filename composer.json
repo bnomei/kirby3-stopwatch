@@ -14,8 +14,11 @@
     "kirby3",
     "kirby3-cms",
     "kirby3-plugin",
+    "stopwatch",
     "profile",
-    "measure"
+    "measure",
+    "milliseconds",
+    "usleep"
   ],
   "autoload": {
     "psr-4": {
