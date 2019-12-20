@@ -64,11 +64,12 @@ final class Stopwatch extends SymStopwatch
      */
     public static function singleton(array $options = []): Stopwatch
     {
-        if (self::$singleton) {
-            return self::$singleton;
+        // @codeCoverageIgnoreStart
+        if (! self::$singleton) {
+            self::$singleton = new self($options);
         }
+        // @codeCoverageIgnoreEnd
 
-        self::$singleton = new self($options);
         return self::$singleton;
     }
 }
