@@ -18,12 +18,12 @@ final class StopwatchTest extends TestCase
     {
         $eventName = 'onesecond';
 
-        $stopwatch = new Stopwatch([
-            'precision' => false
+        $stopwatch = new Stopwatch  ([
+            'precision' => false,
         ]);
 
         $stopwatch->start($eventName);
-        usleep(500);
+        usleep(1);
         $stopwatch->stop($eventName);
 
         $duration = $stopwatch->duration($eventName);
