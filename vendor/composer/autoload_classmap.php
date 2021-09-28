@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Bnomei\\Stopwatch' => $baseDir . '/classes/Stopwatch.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Kirby\\ComposerInstaller\\CmsInstaller' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/CmsInstaller.php',
     'Kirby\\ComposerInstaller\\Installer' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/Installer.php',
     'Kirby\\ComposerInstaller\\Plugin' => $vendorDir . '/getkirby/composer-installer/src/ComposerInstaller/Plugin.php',
@@ -18,6 +19,7 @@ return array(
     'Symfony\\Component\\Stopwatch\\Stopwatch' => $vendorDir . '/symfony/stopwatch/Stopwatch.php',
     'Symfony\\Component\\Stopwatch\\StopwatchEvent' => $vendorDir . '/symfony/stopwatch/StopwatchEvent.php',
     'Symfony\\Component\\Stopwatch\\StopwatchPeriod' => $vendorDir . '/symfony/stopwatch/StopwatchPeriod.php',
+    'Symfony\\Contracts\\Service\\Attribute\\Required' => $vendorDir . '/symfony/service-contracts/Attribute/Required.php',
     'Symfony\\Contracts\\Service\\ResetInterface' => $vendorDir . '/symfony/service-contracts/ResetInterface.php',
     'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => $vendorDir . '/symfony/service-contracts/ServiceLocatorTrait.php',
     'Symfony\\Contracts\\Service\\ServiceProviderInterface' => $vendorDir . '/symfony/service-contracts/ServiceProviderInterface.php',
