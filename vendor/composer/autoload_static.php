@@ -64,6 +64,7 @@ class ComposerStaticInitef983e276fe93156b2c67869a2404720
         'Symfony\\Component\\Stopwatch\\StopwatchEvent' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchEvent.php',
         'Symfony\\Component\\Stopwatch\\StopwatchPeriod' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchPeriod.php',
         'Symfony\\Contracts\\Service\\Attribute\\Required' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/Required.php',
+        'Symfony\\Contracts\\Service\\Attribute\\SubscribedService' => __DIR__ . '/..' . '/symfony/service-contracts/Attribute/SubscribedService.php',
         'Symfony\\Contracts\\Service\\ResetInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ResetInterface.php',
         'Symfony\\Contracts\\Service\\ServiceLocatorTrait' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceLocatorTrait.php',
         'Symfony\\Contracts\\Service\\ServiceProviderInterface' => __DIR__ . '/..' . '/symfony/service-contracts/ServiceProviderInterface.php',
