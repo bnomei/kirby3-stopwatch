@@ -1,8 +1,8 @@
 <?php return array(
     'root' => array(
         'name' => 'bnomei/kirby3-stopwatch',
-        'pretty_version' => '1.0.6',
-        'version' => '1.0.6.0',
+        'pretty_version' => '1.0.7',
+        'version' => '1.0.7.0',
         'reference' => NULL,
         'type' => 'kirby-plugin',
         'install_path' => __DIR__ . '/../../',
@@ -11,8 +11,8 @@
     ),
     'versions' => array(
         'bnomei/kirby3-stopwatch' => array(
-            'pretty_version' => '1.0.6',
-            'version' => '1.0.6.0',
+            'pretty_version' => '1.0.7',
+            'version' => '1.0.7.0',
             'reference' => NULL,
             'type' => 'kirby-plugin',
             'install_path' => __DIR__ . '/../../',
@@ -47,9 +47,9 @@
             'dev_requirement' => false,
         ),
         'symfony/stopwatch' => array(
-            'pretty_version' => 'v5.4.13',
-            'version' => '5.4.13.0',
-            'reference' => '6df7a3effde34d81717bbef4591e5ffe32226d69',
+            'pretty_version' => 'v5.4.21',
+            'version' => '5.4.21.0',
+            'reference' => 'f83692cd869a6f2391691d40a01e8acb89e76fee',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/stopwatch',
             'aliases' => array(),
